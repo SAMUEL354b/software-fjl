@@ -1,0 +1,28 @@
+2026-11-20 20:02:01,725 | INFO    | Registro de cliente ('C001', 'Ana Gómez') OK
+2026-11-20 20:02:01,725 | INFO    | Registro de cliente ('C002', 'Luis Pérez') OK
+2026-11-20 20:02:01,725 | ERROR   | Registro de cliente ('C003', 'J0hn') FALLÓ -> DatoInvalidoError: El nombre no puede contener números: 'J0hn'
+2026-11-20 20:02:01,725 | ERROR   | Registro de cliente ('', 'Sin Id') FALLÓ -> ParametroFaltanteError: La entidad requiere un identificador.
+2026-11-20 20:02:01,725 | INFO    | Creación de servicio ReservaSala ('S01', 'Sala Alfa') OK
+2026-11-20 20:02:01,725 | INFO    | Creación de servicio AlquilerEquipo ('S02', 'Proyector 4K') OK
+2026-11-20 20:02:01,725 | INFO    | Creación de servicio AsesoriaEspecializada ('S03', 'Arquitectura') OK
+2026-11-20 20:02:01,725 | ERROR   | Creación de servicio ReservaSala ('S04', 'Sala Beta') FALLÓ -> DatoInvalidoError: Tarifa por hora inválida: -100
+2026-11-20 20:02:01,725 | INFO    | Creación de reserva R01 OK
+2026-11-20 20:02:01,725 | ERROR   | Creación de reserva R02 FALLÓ -> ReservaInvalidaError: No se pudo crear la reserva R02 | causa: DatoInvalidoError: Personas (25) excede la capacidad 10.
+2026-11-20 20:02:01,725 | INFO    | Creación de reserva R03 OK
+2026-11-20 20:02:01,725 | ERROR   | Creación de reserva R04 FALLÓ -> ReservaInvalidaError: No se pudo crear la reserva R04 | causa: DatoInvalidoError: Nivel inválido: 'gurú'. Use ['junior', 'senior', 'experto']
+2026-11-20 20:02:01,725 | ERROR   | Creación de reserva R05 FALLÓ -> ReservaInvalidaError: No se pudo crear la reserva R05 | causa: ParametroFaltanteError: Reserva de sala requiere 'personas'.
+2026-11-20 20:02:01,725 | INFO    | Creación de reserva R06 OK
+2026-11-20 20:02:01,725 | INFO    | Confirmación de R01 OK
+2026-11-20 20:02:01,725 | INFO    | Intento de procesamiento de R01 (estado: PROCESADA)
+2026-11-20 20:02:01,725 | INFO    | Procesamiento de R01 OK
+2026-11-20 20:02:01,726 | INFO    | Intento de procesamiento de R03 (estado: PENDIENTE)
+2026-11-20 20:02:01,726 | ERROR   | Procesamiento de R03 FALLÓ -> ReservaInvalidaError: Fallo al procesar R03 | causa: OperacionNoPermitidaError: Solo se procesan reservas CONFIRMADAS.
+2026-11-20 20:02:01,726 | INFO    | Confirmación de R03 OK
+2026-11-20 20:02:01,726 | INFO    | Intento de procesamiento de R03 (estado: PROCESADA)
+2026-11-20 20:02:01,726 | INFO    | Procesamiento de R03 OK
+2026-11-20 20:02:01,726 | ERROR   | Cancelación de R01 FALLÓ -> OperacionNoPermitidaError: No se puede cancelar una reserva PROCESADA.
+2026-11-20 20:02:01,726 | INFO    | Cancelación de R06 OK
+2026-11-20 20:02:01,726 | ERROR   | Confirmación de R06 FALLÓ -> OperacionNoPermitidaError: No se puede confirmar una reserva CANCELADA.
+2026-11-20 20:02:01,726 | ERROR   | Creación de reserva R07 FALLÓ -> ReservaInvalidaError: No se pudo crear la reserva R07 | causa: ServicioNoDisponibleError: 'Proyector 4K' no está disponible.
+2026-11-20 20:02:01,726 | INFO    | Intento de procesamiento de R03 (estado: PROCESADA)
+2026-11-20 20:02:01,726 | ERROR   | Procesamiento de R03 FALLÓ -> ReservaInvalidaError: Fallo al procesar R03 | causa: OperacionNoPermitidaError: Solo se procesan reservas CONFIRMADAS.
